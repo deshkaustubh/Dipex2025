@@ -49,15 +49,11 @@ Pull-to-refresh is supported, and the UI dynamically reflects Firebase data in r
 
 > Replace the image links with actual screenshots from your app.
 
-### 🏠 Home Screen
-![Home Screen](https://via.placeholder.com/400x800.png?text=Home+Screen)
-
 ### 💧 Sector Moisture View
-![Moisture View](https://via.placeholder.com/400x800.png?text=Sector+Moisture+View)
+![Home Screen](img.png)
 
 ### ✅ Motor Running View (With Bubbles)
-![Motor Running](https://via.placeholder.com/400x800.png?text=Motor+Running+With+Bubbles)
-
+![Moisture View](img_1.png)
 ---
 
 > Designed and built with ❤️ for efficient and smart farming.

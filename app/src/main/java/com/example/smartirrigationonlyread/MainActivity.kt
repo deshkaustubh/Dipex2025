@@ -66,7 +66,7 @@ class MainActivity : ComponentActivity() {
                             )
                         )
                 ) {
-                    if (motorStatus) {
+                    if (!motorStatus) {
                         WaterWaveWithBubbles(
                             modifier = Modifier
                                 .fillMaxSize()

@@ -28,6 +28,139 @@ The **Smart Irrigation Monitor** is a modern Android application built with Jetp
 
 ---
 
+## 🔄 Project Flow Diagram
+
+```mermaid
+flowchart TD
+    A[📱 App Launch] --> B[🔧 MainActivity onCreate]
+    B --> C[🔥 Firebase Database Init]
+    C --> D[📊 Database References Setup]
+    D --> E{📶 Network Check}
+    
+    E -->|Connected| F[🎨 UI Composition]
+    E -->|Disconnected| G[⚠️ Offline Mode]
+    
+    F --> H[🌊 Background Animation Setup]
+    H --> I[📋 SectorDashboard Init]
+    I --> J[👂 Firebase Listeners Setup]
+    
+    J --> K[🔄 Real-time Data Flow]
+    K --> L[📈 Sector 1 Data]
+    K --> M[📈 Sector 2 Data]
+    K --> N[🚜 Motor Status Data]
+    
+    L --> O[💧 Moisture Level Display]
+    L --> P[🔧 Valve Status Display]
+    L --> Q[📡 Sensor Status Display]
+    
+    M --> R[💧 Moisture Level Display]
+    M --> S[🔧 Valve Status Display]
+    M --> T[📡 Sensor Status Display]
+    
+    N --> U{🚜 Motor Status?}
+    U -->|Running| V[🌊 WaterWave Animation]
+    U -->|Stopped| W[🫧 WaterWaveWithBubbles Animation]
+    
+    O --> X[📊 SectorCard UI Update]
+    P --> X
+    Q --> X
+    R --> X
+    S --> X
+    T --> X
+    
+    X --> Y[🎯 Animated Progress Bars]
+    Y --> Z[✅ UI State Updated]
+    
+    Z --> AA[👆 User Interaction]
+    AA --> AB{📱 User Action?}
+    AB -->|Pull to Refresh| AC[🔄 Manual Data Fetch]
+    AB -->|View Data| AD[👀 Continue Monitoring]
+    
+    AC --> E
+    AD --> K
+    
+    G --> AE[📱 Display Cached Data]
+    AE --> AF[🔄 Retry Connection]
+    AF --> E
+    
+    subgraph "🔥 Firebase Realtime Database"
+        AG[📊 /sectors/sector1]
+        AH[📊 /sectors/sector2]
+        AI[🚜 /motor/status]
+    end
+    
+    subgraph "📱 UI Components"
+        AJ[🎨 SectorCard]
+        AK[🚜 MotorStatusCard]
+        AL[🌊 WaterWave Animations]
+        AM[📊 Progress Indicators]
+    end
+    
+    subgraph "💾 Data Models"
+        AN[📋 SectorData]
+        AO[🔧 Motor Status]
+        AP[📡 Sensor Status]
+    end
+    
+    AG --> L
+    AH --> M
+    AI --> N
+    
+    style A fill:#e1f5fe
+    style C fill:#fff3e0
+    style K fill:#f3e5f5
+    style U fill:#e8f5e8
+    style X fill:#fce4ec
+    style Z fill:#e0f2f1
+```
+
+---
+
+## 📊 Architecture Overview
+
+```mermaid
+graph LR
+    subgraph "📱 Mobile App"
+        A[MainActivity] --> B[SectorDashboard]
+        B --> C[SectorCard Components]
+        B --> D[MotorStatusCard]
+        B --> E[Animation Components]
+        
+        E --> F[WaterWave]
+        E --> G[WaterWaveWithBubbles]
+    end
+    
+    subgraph "🔥 Firebase Services"
+        H[Realtime Database] --> I[/sectors/sector1]
+        H --> J[/sectors/sector2]
+        H --> K[/motor/status]
+    end
+    
+    subgraph "📊 Data Flow"
+        L[ValueEventListener] --> M[Real-time Updates]
+        M --> N[State Management]
+        N --> O[UI Recomposition]
+    end
+    
+    subgraph "🎨 UI Layer"
+        P[Jetpack Compose] --> Q[Material 3]
+        Q --> R[Custom Animations]
+        R --> S[Responsive Design]
+    end
+    
+    A -.-> H
+    B -.-> L
+    C -.-> P
+    D -.-> P
+    
+    style A fill:#e3f2fd
+    style H fill:#fff3e0
+    style L fill:#f3e5f5
+    style P fill:#e8f5e8
+```
+
+---
+
 ## 🛠️ Tech Stack
 
 ### **Core Technologies**

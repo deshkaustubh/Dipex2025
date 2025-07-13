@@ -32,7 +32,7 @@ The **Smart Irrigation Monitor** is a modern Android application built with Jetp
 
 ```mermaid
 flowchart TD
-    A[📱 App Launch] --> B[🔧 MainActivity onCreate]
+    A[ App Launch] --> B[ MainActivity onCreate]
     B --> C[🔥 Firebase Database Init]
     C --> D[📊 Database References Setup]
     D --> E{📶 Network Check}
@@ -112,51 +112,6 @@ flowchart TD
     style U fill:#e8f5e8
     style X fill:#fce4ec
     style Z fill:#e0f2f1
-```
-
----
-
-## 📊 Architecture Overview
-
-```mermaid
-graph LR
-    subgraph "📱 Mobile App"
-        A[MainActivity] --> B[SectorDashboard]
-        B --> C[SectorCard Components]
-        B --> D[MotorStatusCard]
-        B --> E[Animation Components]
-        
-        E --> F[WaterWave]
-        E --> G[WaterWaveWithBubbles]
-    end
-    
-    subgraph "🔥 Firebase Services"
-        H[Realtime Database] --> I[/sectors/sector1]
-        H --> J[/sectors/sector2]
-        H --> K[/motor/status]
-    end
-    
-    subgraph "📊 Data Flow"
-        L[ValueEventListener] --> M[Real-time Updates]
-        M --> N[State Management]
-        N --> O[UI Recomposition]
-    end
-    
-    subgraph "🎨 UI Layer"
-        P[Jetpack Compose] --> Q[Material 3]
-        Q --> R[Custom Animations]
-        R --> S[Responsive Design]
-    end
-    
-    A -.-> H
-    B -.-> L
-    C -.-> P
-    D -.-> P
-    
-    style A fill:#e3f2fd
-    style H fill:#fff3e0
-    style L fill:#f3e5f5
-    style P fill:#e8f5e8
 ```
 
 ---

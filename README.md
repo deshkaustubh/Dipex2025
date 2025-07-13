@@ -1,10 +1,5 @@
 # 🌿 Smart Irrigation Monitor
 
-<div align="center">
-  <img src="img.png" alt="Smart Irrigation App Screenshot" width="300"/>
-  <img src="img_1.png" alt="Smart Irrigation App Screenshot 2" width="300"/>
-</div>
-
 ---
 
 ## 📱 About the App
@@ -27,8 +22,8 @@ The **Smart Irrigation Monitor** is a modern Android application built with Jetp
 
 ## 🚀 Screenshots
 
-| Main Dashboard | Sector Details |
-|----------------|----------------|
+| |  |
+|-|--|
 | ![Dashboard](img.png) | ![Sectors](img_1.png) | 
 
 ---
